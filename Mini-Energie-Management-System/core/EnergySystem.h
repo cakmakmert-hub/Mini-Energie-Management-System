@@ -24,8 +24,10 @@ private:
 	PVPlant pv;
 
 public:
-	EnergySystem();
-	StepResult step(const context& ctx);
+	EnergySystem(double batteryCap,
+				double loadDemand,
+				double pvPeak);
+	StepResult step(const Context& ctx);
 };
 
 

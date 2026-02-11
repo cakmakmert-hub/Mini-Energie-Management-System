@@ -7,12 +7,12 @@
 
 #include "EnergySystem.h"
 
-EnergySystem::EnergySystem()
-: battery(10.0), load(5.0), pv(3.0) {}
+EnergySystem::EnergySystem(double batteryCap,
+							double loadDemand,
+							double pvPeak)
+: battery(batteryCap), load(loadDemand), pv(pvPeak) {}
 
 StepResult EnergySystem::step(const Context& ctx) {
-	StepResult r{};
-
 	StepResult r{};
 
 	double production = pv.produce(ctx);
@@ -30,7 +30,7 @@ StepResult EnergySystem::step(const Context& ctx) {
 	} else {
 		double needed =- surplus;
 		double fromBattery = battery.discharge(needed);
-		r.gridImport = needed - fromBAttery;
+		r.gridImport = needed - fromBattery;
 
 	}
 
