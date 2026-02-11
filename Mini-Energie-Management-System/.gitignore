@@ -1,0 +1,13 @@
+﻿/Debug/
+/Release/
+/build/
+/Binaries/
+*.o
+*.obj
+*.exe
+*.out
+*.a
+*.so
+*.dll
+.settings/
+*.log
